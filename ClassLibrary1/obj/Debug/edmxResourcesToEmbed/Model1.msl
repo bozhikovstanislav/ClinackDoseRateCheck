@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Calibs">
+      <EntityTypeMapping TypeName="Model.Calib">
+        <MappingFragment StoreEntitySet="Calib">
+          <ScalarProperty Name="Base_Value_6MV" ColumnName="Base_Value_6MV" />
+          <ScalarProperty Name="Base_Value_10MV" ColumnName="Base_Value_10MV" />
+          <ScalarProperty Name="Base_Value_15MV" ColumnName="Base_Value_15MV" />
+          <ScalarProperty Name="Base_Value_18MV" ColumnName="Base_Value_18MV" />
+          <ScalarProperty Name="Calib_ID" ColumnName="Calib_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_10MV">
+      <EntityTypeMapping TypeName="Model.Data_10MV">
+        <MappingFragment StoreEntitySet="Data_10MV">
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Data_10MV_ID" ColumnName="Data_10MV_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Delta_10MV" ColumnName="Delta_10MV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_15MV">
+      <EntityTypeMapping TypeName="Model.DATA_15MV">
+        <MappingFragment StoreEntitySet="DATA_15MV">
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Data_15MV_ID" ColumnName="Data_15MV_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Delta_15MV" ColumnName="Delta_15MV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_18MV">
+      <EntityTypeMapping TypeName="Model.Data_18MV">
+        <MappingFragment StoreEntitySet="Data_18MV">
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Data_18MV_ID" ColumnName="Data_18MV_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Delta_18MV" ColumnName="Delta_18MV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_6MV">
+      <EntityTypeMapping TypeName="Model.Data_6MV">
+        <MappingFragment StoreEntitySet="Data_6MV">
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Valu3" ColumnName="Valu3" />
+          <ScalarProperty Name="Valu4" ColumnName="Valu4" />
+          <ScalarProperty Name="Data_6MV_ID" ColumnName="Data_6MV_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Delta_6MV" ColumnName="Delta_6MV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QA_Data">
+      <EntityTypeMapping TypeName="Model.QA_Data">
+        <MappingFragment StoreEntitySet="QA_Data">
+          <ScalarProperty Name="Blokirovki_vrata" ColumnName="Blokirovki_vrata" />
+          <ScalarProperty Name="QA_ID" ColumnName="QA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_P_CorrSet">
+      <EntityTypeMapping TypeName="Model.T_P_CorrSet">
+        <MappingFragment StoreEntitySet="T_P_CorrSet">
+          <ScalarProperty Name="T_P_ID" ColumnName="T_P_ID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="T_C" ColumnName="T_C" />
+          <ScalarProperty Name="P_kPa" ColumnName="P_kPa" />
+          <ScalarProperty Name="K_Korr" ColumnName="K_Korr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserData_6MV" TypeName="Model.UserData_6MV" StoreEntitySet="Data_6MV">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Data_6MV">
+        <ScalarProperty Name="Data_6MV_ID" ColumnName="Data_6MV_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserCalib" TypeName="Model.UserCalib" StoreEntitySet="Calib">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Calib">
+        <ScalarProperty Name="Calib_ID" ColumnName="Calib_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserT_P_CorrSet" TypeName="Model.UserT_P_CorrSet" StoreEntitySet="T_P_CorrSet">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="T_P_CorrSet">
+        <ScalarProperty Name="T_P_ID" ColumnName="T_P_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserData_10MV" TypeName="Model.UserData_10MV" StoreEntitySet="Data_10MV">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Data_10MV">
+        <ScalarProperty Name="Data_10MV_ID" ColumnName="Data_10MV_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserDATA_15MV" TypeName="Model.UserDATA_15MV" StoreEntitySet="DATA_15MV">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="DATA_15MV">
+        <ScalarProperty Name="Data_15MV_ID" ColumnName="Data_15MV_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserData_18MV" TypeName="Model.UserData_18MV" StoreEntitySet="Data_18MV">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Data_18MV">
+        <ScalarProperty Name="Data_18MV_ID" ColumnName="Data_18MV_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserQA_Data" TypeName="Model.UserQA_Data" StoreEntitySet="QA_Data">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="QA_Data">
+        <ScalarProperty Name="QA_ID" ColumnName="QA_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

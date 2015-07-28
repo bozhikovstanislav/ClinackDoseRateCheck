@@ -1,0 +1,13 @@
+Source      : E:\Proj_MorningCheck\MorningCheck\MorningCheck\bin\Release\MyDatabase#1.sdf
+Destination : C:\Users\STANIS~1\AppData\Local\Temp\sql5FC3.tmp
+Repairing - verMajor: 3, verMinor: 5, verBuild: 8080, verPoint: 0
+Time - 2013-04-11 22:11:17.694
+Selected page not found - idPage: 1036, iPage: 5
+Selected page not found - idPage: 1038, iPage: 13
+Selected page not found - idPage: 1059, iPage: 20
+
+Source      : E:\Proj_MorningCheck\MorningCheck\MorningCheck\bin\Release\MyDatabase#1.sdf
+Destination : C:\Users\STANIS~1\AppData\Local\Temp\sqlBDA.tmp
+Repairing - verMajor: 3, verMinor: 5, verBuild: 8080, verPoint: 0
+Time - 2013-04-11 22:15:18.364
+

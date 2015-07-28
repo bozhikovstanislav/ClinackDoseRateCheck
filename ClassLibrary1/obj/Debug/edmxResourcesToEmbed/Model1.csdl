@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Calibs" EntityType="Model.Calib" />
+    <EntitySet Name="Data_10MV" EntityType="Model.Data_10MV" />
+    <EntitySet Name="DATA_15MV" EntityType="Model.DATA_15MV" />
+    <EntitySet Name="Data_18MV" EntityType="Model.Data_18MV" />
+    <EntitySet Name="Data_6MV" EntityType="Model.Data_6MV" />
+    <EntitySet Name="QA_Data" EntityType="Model.QA_Data" />
+    <EntitySet Name="T_P_CorrSet" EntityType="Model.T_P_CorrSet" />
+    <EntitySet Name="Users" EntityType="Model.User" />
+    <AssociationSet Name="UserData_6MV" Association="Model.UserData_6MV">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Data_6MV" EntitySet="Data_6MV" />
+    </AssociationSet>
+    <AssociationSet Name="UserCalib" Association="Model.UserCalib">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Calib" EntitySet="Calibs" />
+    </AssociationSet>
+    <AssociationSet Name="UserT_P_CorrSet" Association="Model.UserT_P_CorrSet">
+      <End Role="User" EntitySet="Users" />
+      <End Role="T_P_CorrSet" EntitySet="T_P_CorrSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserData_10MV" Association="Model.UserData_10MV">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Data_10MV" EntitySet="Data_10MV" />
+    </AssociationSet>
+    <AssociationSet Name="UserDATA_15MV" Association="Model.UserDATA_15MV">
+      <End Role="User" EntitySet="Users" />
+      <End Role="DATA_15MV" EntitySet="DATA_15MV" />
+    </AssociationSet>
+    <AssociationSet Name="UserData_18MV" Association="Model.UserData_18MV">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Data_18MV" EntitySet="Data_18MV" />
+    </AssociationSet>
+    <AssociationSet Name="UserQA_Data" Association="Model.UserQA_Data">
+      <End Role="User" EntitySet="Users" />
+      <End Role="QA_Data" EntitySet="QA_Data" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Calib">
+    <Key>
+      <PropertyRef Name="Calib_ID" />
+    </Key>
+    <Property Name="Base_Value_6MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_10MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_15MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_18MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Calib_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" />
+    <NavigationProperty Name="User" Relationship="Model.UserCalib" FromRole="Calib" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Data_10MV">
+    <Key>
+      <PropertyRef Name="Data_10MV_ID" />
+    </Key>
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data_10MV_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="Delta_10MV" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Model.UserData_10MV" FromRole="Data_10MV" ToRole="User" />
+  </EntityType>
+  <EntityType Name="DATA_15MV">
+    <Key>
+      <PropertyRef Name="Data_15MV_ID" />
+    </Key>
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data_15MV_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="Delta_15MV" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Model.UserDATA_15MV" FromRole="DATA_15MV" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Data_18MV">
+    <Key>
+      <PropertyRef Name="Data_18MV_ID" />
+    </Key>
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data_18MV_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="Delta_18MV" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Model.UserData_18MV" FromRole="Data_18MV" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Data_6MV">
+    <Key>
+      <PropertyRef Name="Data_6MV_ID" />
+    </Key>
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Valu3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Valu4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data_6MV_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="Delta_6MV" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Model.UserData_6MV" FromRole="Data_6MV" ToRole="User" />
+  </EntityType>
+  <EntityType Name="QA_Data">
+    <Key>
+      <PropertyRef Name="QA_ID" />
+    </Key>
+    <Property Name="Blokirovki_vrata" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="QA_ID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Model.UserQA_Data" FromRole="QA_Data" ToRole="User" />
+  </EntityType>
+  <EntityType Name="T_P_CorrSet">
+    <Key>
+      <PropertyRef Name="T_P_ID" />
+    </Key>
+    <Property Name="T_P_ID" Type="Guid" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" />
+    <Property Name="T_C" Type="Int32" />
+    <Property Name="P_kPa" Type="Double" />
+    <Property Name="K_Korr" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Model.UserT_P_CorrSet" FromRole="T_P_CorrSet" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="First_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Data_6MV" Relationship="Model.UserData_6MV" FromRole="User" ToRole="Data_6MV" />
+    <NavigationProperty Name="Calib" Relationship="Model.UserCalib" FromRole="User" ToRole="Calib" />
+    <NavigationProperty Name="T_P_CorrSet" Relationship="Model.UserT_P_CorrSet" FromRole="User" ToRole="T_P_CorrSet" />
+    <NavigationProperty Name="Data_10MV" Relationship="Model.UserData_10MV" FromRole="User" ToRole="Data_10MV" />
+    <NavigationProperty Name="DATA_15MV" Relationship="Model.UserDATA_15MV" FromRole="User" ToRole="DATA_15MV" />
+    <NavigationProperty Name="Data_18MV" Relationship="Model.UserData_18MV" FromRole="User" ToRole="Data_18MV" />
+    <NavigationProperty Name="QA_Data" Relationship="Model.UserQA_Data" FromRole="User" ToRole="QA_Data" />
+  </EntityType>
+  <Association Name="UserData_6MV">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.Data_6MV" Role="Data_6MV" Multiplicity="*" />
+  </Association>
+  <Association Name="UserCalib">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.Calib" Role="Calib" Multiplicity="*" />
+  </Association>
+  <Association Name="UserT_P_CorrSet">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.T_P_CorrSet" Role="T_P_CorrSet" Multiplicity="*" />
+  </Association>
+  <Association Name="UserData_10MV">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.Data_10MV" Role="Data_10MV" Multiplicity="*" />
+  </Association>
+  <Association Name="UserDATA_15MV">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.DATA_15MV" Role="DATA_15MV" Multiplicity="*" />
+  </Association>
+  <Association Name="UserData_18MV">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.Data_18MV" Role="Data_18MV" Multiplicity="*" />
+  </Association>
+  <Association Name="UserQA_Data">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.QA_Data" Role="QA_Data" Multiplicity="*" />
+  </Association>
+</Schema>

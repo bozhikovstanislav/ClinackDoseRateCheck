@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Calib" EntityType="Model.Calib" />
+    <EntitySet Name="Data_10MV" EntityType="Model.Data_10MV" />
+    <EntitySet Name="DATA_15MV" EntityType="Model.DATA_15MV" />
+    <EntitySet Name="Data_18MV" EntityType="Model.Data_18MV" />
+    <EntitySet Name="Data_6MV" EntityType="Model.Data_6MV" />
+    <EntitySet Name="QA_Data" EntityType="Model.QA_Data" />
+    <EntitySet Name="T_P_CorrSet" EntityType="Model.T_P_CorrSet" />
+    <EntitySet Name="User" EntityType="Model.User" />
+  </EntityContainer>
+  <EntityType Name="Calib">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Base_Value_6MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_10MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_15MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Base_Value_18MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_P_Corr_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Data_10MV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Delta_10MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_P_Corr_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DATA_15MV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Delta_15MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_P_Corr_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Data_18MV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Delta_18MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_P_Corr_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Data_6MV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Value2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Valu3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Valu4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" />
+    <Property Name="Delta_6MV" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_P_Corr_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QA_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Blokirovki_vrata" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_P_CorrSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="P_hPa" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="T_C" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="K_corr" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="Data" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

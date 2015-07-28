@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="Calib">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Calib)">
+        <MappingFragment StoreEntitySet="Calib">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Base_Value_6MV" ColumnName="Base_Value_6MV" />
+          <ScalarProperty Name="Base_Value_10MV" ColumnName="Base_Value_10MV" />
+          <ScalarProperty Name="Base_Value_15MV" ColumnName="Base_Value_15MV" />
+          <ScalarProperty Name="Base_Value_18MV" ColumnName="Base_Value_18MV" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="T_P_Corr_Id" ColumnName="T_P_Corr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_10MV">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Data_10MV)">
+        <MappingFragment StoreEntitySet="Data_10MV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Delta_10MV" ColumnName="Delta_10MV" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="T_P_Corr_Id" ColumnName="T_P_Corr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_15MV">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.DATA_15MV)">
+        <MappingFragment StoreEntitySet="DATA_15MV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Delta_15MV" ColumnName="Delta_15MV" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="T_P_Corr_Id" ColumnName="T_P_Corr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_18MV">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Data_18MV)">
+        <MappingFragment StoreEntitySet="Data_18MV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+          <ScalarProperty Name="Delta_18MV" ColumnName="Delta_18MV" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="T_P_Corr_Id" ColumnName="T_P_Corr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Data_6MV">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Data_6MV)">
+        <MappingFragment StoreEntitySet="Data_6MV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Valu3" ColumnName="Valu3" />
+          <ScalarProperty Name="Valu4" ColumnName="Valu4" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Delta_6MV" ColumnName="Delta_6MV" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="T_P_Corr_Id" ColumnName="T_P_Corr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QA_Data">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.QA_Data)">
+        <MappingFragment StoreEntitySet="QA_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Blokirovki_vrata" ColumnName="Blokirovki_vrata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_P_CorrSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.T_P_CorrSet)">
+        <MappingFragment StoreEntitySet="T_P_CorrSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="P_hPa" ColumnName="P_hPa" />
+          <ScalarProperty Name="T_C" ColumnName="T_C" />
+          <ScalarProperty Name="K_corr" ColumnName="K_corr" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

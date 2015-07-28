@@ -1,0 +1,290 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 11/03/2013 17:22:45
+-- Generated from EDMX file: D:\GoogleDisk\MorningCheck\ClassLibrary1\Model1.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [Calib];
+GO
+    DROP TABLE [Data_10MV];
+GO
+    DROP TABLE [DATA_15MV];
+GO
+    DROP TABLE [Data_18MV];
+GO
+    DROP TABLE [Data_6MV];
+GO
+    DROP TABLE [QA_Data];
+GO
+    DROP TABLE [T_P_CorrSet];
+GO
+    DROP TABLE [User];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Calib'
+CREATE TABLE [Calib] (
+    [Base_Value_6MV] nvarchar(100)  NULL,
+    [Base_Value_10MV] nvarchar(100)  NULL,
+    [Base_Value_15MV] nvarchar(100)  NULL,
+    [Base_Value_18MV] nvarchar(100)  NULL,
+    [Calib_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'Data_10MV'
+CREATE TABLE [Data_10MV] (
+    [Value1] nvarchar(100)  NULL,
+    [Value2] nvarchar(100)  NULL,
+    [Value3] nvarchar(100)  NULL,
+    [Value4] nvarchar(100)  NULL,
+    [Data_10MV_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NULL,
+    [Delta_10MV] float  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'DATA_15MV'
+CREATE TABLE [DATA_15MV] (
+    [Value1] nvarchar(100)  NULL,
+    [Value2] nvarchar(100)  NULL,
+    [Value3] nvarchar(100)  NULL,
+    [Value4] nvarchar(100)  NULL,
+    [Data_15MV_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NULL,
+    [Delta_15MV] float  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'Data_18MV'
+CREATE TABLE [Data_18MV] (
+    [Value1] nvarchar(100)  NULL,
+    [Value2] nvarchar(100)  NULL,
+    [Value3] nvarchar(100)  NULL,
+    [Value4] nvarchar(100)  NULL,
+    [Data_18MV_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NULL,
+    [Delta_18MV] float  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'Data_6MV'
+CREATE TABLE [Data_6MV] (
+    [Value1] nvarchar(100)  NULL,
+    [Value2] nvarchar(100)  NULL,
+    [Valu3] nvarchar(100)  NULL,
+    [Valu4] nvarchar(100)  NULL,
+    [Data_6MV_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NULL,
+    [Delta_6MV] float  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'QA_Data'
+CREATE TABLE [QA_Data] (
+    [Blokirovki_vrata] nvarchar(100)  NULL,
+    [QA_ID] uniqueidentifier  NOT NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'T_P_CorrSet'
+CREATE TABLE [T_P_CorrSet] (
+    [T_P_ID] uniqueidentifier  NOT NULL,
+    [Data] datetime  NOT NULL,
+    [T_C] int  NULL,
+    [P_kPa] float  NULL,
+    [K_Korr] float  NULL,
+    [User_UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- Creating table 'User'
+CREATE TABLE [User] (
+    [First_Name] nvarchar(100)  NULL,
+    [Last_Name] nvarchar(100)  NULL,
+    [Password] nvarchar(100)  NULL,
+    [UserID] uniqueidentifier  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Calib_ID] in table 'Calib'
+ALTER TABLE [Calib]
+ADD CONSTRAINT [PK_Calib]
+    PRIMARY KEY ([Calib_ID] );
+GO
+
+-- Creating primary key on [Data_10MV_ID] in table 'Data_10MV'
+ALTER TABLE [Data_10MV]
+ADD CONSTRAINT [PK_Data_10MV]
+    PRIMARY KEY ([Data_10MV_ID] );
+GO
+
+-- Creating primary key on [Data_15MV_ID] in table 'DATA_15MV'
+ALTER TABLE [DATA_15MV]
+ADD CONSTRAINT [PK_DATA_15MV]
+    PRIMARY KEY ([Data_15MV_ID] );
+GO
+
+-- Creating primary key on [Data_18MV_ID] in table 'Data_18MV'
+ALTER TABLE [Data_18MV]
+ADD CONSTRAINT [PK_Data_18MV]
+    PRIMARY KEY ([Data_18MV_ID] );
+GO
+
+-- Creating primary key on [Data_6MV_ID] in table 'Data_6MV'
+ALTER TABLE [Data_6MV]
+ADD CONSTRAINT [PK_Data_6MV]
+    PRIMARY KEY ([Data_6MV_ID] );
+GO
+
+-- Creating primary key on [QA_ID] in table 'QA_Data'
+ALTER TABLE [QA_Data]
+ADD CONSTRAINT [PK_QA_Data]
+    PRIMARY KEY ([QA_ID] );
+GO
+
+-- Creating primary key on [T_P_ID] in table 'T_P_CorrSet'
+ALTER TABLE [T_P_CorrSet]
+ADD CONSTRAINT [PK_T_P_CorrSet]
+    PRIMARY KEY ([T_P_ID] );
+GO
+
+-- Creating primary key on [UserID] in table 'User'
+ALTER TABLE [User]
+ADD CONSTRAINT [PK_User]
+    PRIMARY KEY ([UserID] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [User_UserID] in table 'Calib'
+ALTER TABLE [Calib]
+ADD CONSTRAINT [FK_UserCalib]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserCalib'
+CREATE INDEX [IX_FK_UserCalib]
+ON [Calib]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'Data_10MV'
+ALTER TABLE [Data_10MV]
+ADD CONSTRAINT [FK_UserData_10MV]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserData_10MV'
+CREATE INDEX [IX_FK_UserData_10MV]
+ON [Data_10MV]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'DATA_15MV'
+ALTER TABLE [DATA_15MV]
+ADD CONSTRAINT [FK_UserDATA_15MV]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserDATA_15MV'
+CREATE INDEX [IX_FK_UserDATA_15MV]
+ON [DATA_15MV]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'T_P_CorrSet'
+ALTER TABLE [T_P_CorrSet]
+ADD CONSTRAINT [FK_UserT_P_CorrSet]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserT_P_CorrSet'
+CREATE INDEX [IX_FK_UserT_P_CorrSet]
+ON [T_P_CorrSet]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'Data_18MV'
+ALTER TABLE [Data_18MV]
+ADD CONSTRAINT [FK_UserData_18MV]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserData_18MV'
+CREATE INDEX [IX_FK_UserData_18MV]
+ON [Data_18MV]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'Data_6MV'
+ALTER TABLE [Data_6MV]
+ADD CONSTRAINT [FK_UserData_6MV]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserData_6MV'
+CREATE INDEX [IX_FK_UserData_6MV]
+ON [Data_6MV]
+    ([User_UserID]);
+GO
+
+-- Creating foreign key on [User_UserID] in table 'QA_Data'
+ALTER TABLE [QA_Data]
+ADD CONSTRAINT [FK_UserQA_Data]
+    FOREIGN KEY ([User_UserID])
+    REFERENCES [User]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserQA_Data'
+CREATE INDEX [IX_FK_UserQA_Data]
+ON [QA_Data]
+    ([User_UserID]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
