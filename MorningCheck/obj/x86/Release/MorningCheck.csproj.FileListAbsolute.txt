@@ -124,3 +124,6 @@ C:\Users\stanislav\Documents\Proj_MorningCheck\MorningCheck\MorningCheck\obj\x86
 C:\Users\Stanislav\OneDrive\MorningCheck\MorningCheck\bin\Release\MorningCheck.exe.config
 C:\Users\Stanislav\OneDrive\MorningCheck\MorningCheck\obj\x86\Release\MorningCheck.exe
 C:\Users\Stanislav\OneDrive\MorningCheck\MorningCheck\obj\x86\Release\MorningCheck.pdb
+C:\ClinackDoseRateCheck\MorningCheck\bin\Release\MorningCheck.exe.config
+C:\ClinackDoseRateCheck\MorningCheck\obj\x86\Release\MorningCheck.exe
+C:\ClinackDoseRateCheck\MorningCheck\obj\x86\Release\MorningCheck.pdb
