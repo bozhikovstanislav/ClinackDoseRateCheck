@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClassLibrary1
+namespace MainWord
 {
-    public partial class UserControl_QA : UserControl
+    public partial class Form1 : Form
     {
-        public UserControl_QA()
+        public Form1()
         {
             InitializeComponent();
         }
